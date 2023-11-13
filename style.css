@@ -113,7 +113,7 @@ nav ul li:hover{
     display: grid;
     width: 100vw;
     grid-template-columns: repeat(3, 3fr);
-    grid-template-rows: 2fr 2fr;
+    /* grid-template-rows: 2fr 2fr; */
     /* border: 1px solid aqua; */
     justify-items: center;
     align-items: center;
