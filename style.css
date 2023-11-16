@@ -82,6 +82,7 @@ nav ul li a:hover{
 }
 .header-2 p{
     font-size: 2rem;
+    color: green;
 }
 .header-3{
     grid-column-start: 1;
