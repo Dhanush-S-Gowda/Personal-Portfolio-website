@@ -1,7 +1,7 @@
 :root{
     --primary-background-color1: #000127;
-    --primary-background-color2: #150055;
-    --primary-background-color3: #8f00cc;
+    --primary-background-color2: rgb(66, 0, 113);
+    --primary-background-color3: #b4009f;
     --nav-color: rgb(255, 0, 68);
     --primary-font-color1: azure;
     --primary-font-size: 1.6rem;
@@ -52,7 +52,6 @@ nav ul li a:hover{
 
     /* header-section */
 .header{
-    /* background: linear-gradient(60deg, var(--primary-background-color1), var(--primary-background-color2) , var(--primary-background-color3)); */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -90,6 +89,7 @@ nav ul li a:hover{
 .profile img{
     padding: 0rem;
     height: 10rem;
+    font-style: italic;
 }
 .header-3 p:nth-child(1), .certificates-header, #projects-header, #contact-header{
     color: var(--nav-color);
@@ -110,27 +110,41 @@ nav ul li a:hover{
 
 }
 .certificates{
-    width: 90%;
-    margin: 0 auto;
+    /* width: 90%; */
+    margin: 0 10%; 
     display: grid;
     grid-template-columns: repeat(8, 100%);
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
     gap: 3rem;
     padding-top: 5%;
+}
+
+.certificates::-webkit-scrollbar {
+  width: 12px;
+}
+
+.certificates::-webkit-scrollbar-track {
+  background: var(--primary-background-color1);
+}
+
+.certificates::-webkit-scrollbar-thumb {
+  background: var(--nav-color);
+  border-radius: 0 100% 100% 0;
+}
+
+.certificates > *{
+    scroll-snap-align: start;
 }
 figure{
     background-color: var(--primary-background-color1);
     box-shadow: 0px 0px 10px 1px black;
     border-radius: 5px;
 }
-figure:hover, figure::selection{
-    transform: scale(1.05);
-}
 figure img{
     width: 100%;
     height: 70%;
     border-radius: 5px; 
-
 }
 figcaption{
     text-align: center;
