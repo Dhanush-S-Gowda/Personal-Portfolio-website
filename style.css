@@ -22,7 +22,6 @@ html{
 body{
     overflow-x: hidden;
     background: linear-gradient(75deg, var(--primary-background-color1), var(--primary-background-color2), var(--primary-background-color3));
-    background: url('background.jpeg') cover no-repeat;
     width: 100%;
 }
 
@@ -55,7 +54,7 @@ nav ul li a:hover{
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 100svh;
+    min-height: 100svh;
     padding-top: 1rem ;
 }
 .header-container{
@@ -88,7 +87,8 @@ nav ul li a:hover{
 }
 .profile img{
     padding: 0rem;
-    height: 10rem;
+    max-height: 10rem;
+    min-height: 5rem;
     font-style: italic;
 }
 .header-3 p:nth-child(1), .certificates-header, #projects-header, #contact-header{
@@ -145,6 +145,7 @@ figure img{
     width: 100%;
     height: 70%;
     border-radius: 5px; 
+    object-fit: cover;
 }
 figcaption{
     text-align: center;
@@ -161,7 +162,7 @@ figcaption{
 /* projects-section */
 #projects-container{
     padding-top: 15%;
-    height: 50svh;
+    min-height: 50svh;
     width: 100%;
 }
 #projects-header{
@@ -177,7 +178,7 @@ figcaption{
 
 #contact-container{
     background-color: var(--nav-color);
-    height: 20svh;
+    min-height: 20svh;
 }
 #contact-header{
     color: var(--primary-font-color1);
@@ -187,7 +188,8 @@ figcaption{
 #contact-footer{
     width: 100%;
     color: var(--primary-font-color1);
-    padding: 5%;
+    /* padding: 5%; */
+    font-size: 2.3rem;
     text-align: center;
     background-color: var(--nav-color);
 }
@@ -202,6 +204,7 @@ figcaption{
 #contact{
     display: flex;
     justify-content: space-evenly;
-
-    padding: 5svh 0;
+    margin: 0 auto;
+    max-width: 50%;
+    
 }
