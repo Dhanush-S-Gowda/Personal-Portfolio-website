@@ -27,6 +27,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 .nav-color {
   color: var(--nav-color);
@@ -81,23 +82,24 @@ nav i {
   transform: scale(1.1);
 }
 
-.outer{
+.outer {
   overflow-x: hidden;
-
+  margin-bottom: -100svh;
 }
-.slider{
+.slider {
   display: flex;
-  width: 300vw;
+  flex-direction: column;
+  width: 100vw;
 }
-section{
-  height: 100%;
-  width: 100%;
-
+section {
+  height: 100svh;
+  width: 100svw;
+  overflow-y: hidden;
 }
 
 .one {
   width: 100%;
-  height: 100svh;
+  height: 100svh !important;
   overflow-y: hidden;
   display: flex;
   align-items: flex-start;
@@ -139,13 +141,14 @@ section{
   width: max(40svw, 250px);
 }
 
-#main{
-  width: 100svw;
-  height: 100svh;
+#main {
+  overflow-x: hidden;
+  height: 100%;
   background-color: rgb(230, 220, 0);
-  overflow: hidden;
+  overflow-y: hidden;
+  width: 100%;
 }
-#circle{
+#circle {
   width: 80svw;
   height: 80svw;
   border-radius: 50%;
@@ -157,7 +160,7 @@ section{
   transform: translate(0%, -50%) rotate(100deg);
   border: 2px solid white;
 }
-.stripe{
+.stripe {
   width: 100%;
   height: 65px;
   position: absolute;
@@ -167,76 +170,78 @@ section{
   transform-origin: 0% 50%;
   display: flex;
 }
-.str1{
+.str1 {
   transform: translate(0, -50%) rotate(-40deg) !important;
 }
-.str2{
+.str2 {
   transform: translate(0, -50%) rotate(-20deg) !important;
 }
-.str4{
+.str4 {
   transform: translate(0, -50%) rotate(20deg) !important;
-
 }
-.str5{
+.str5 {
   transform: translate(0, -50%) rotate(40deg) !important;
 }
-.first{
+.first {
   width: 50%;
   height: 100%;
   position: relative;
-
 }
-.second{
+.second {
   width: 50%;
-  height: 180%;
+  height: 300%;
   display: flex;
-
 }
-.second img{
+.second img {
   margin: 0 30px;
   object-fit: contain;
   transition: all 0.5s ease;
+  position: relative;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.272);
 }
 
-.second h3{
-  font-size: 2svw ;
+.second h3 {
+  font-size: max(2svw, 18px);
   min-width: 40svw;
-
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.272);
 }
-.smcircle{
-  width: 0.6vw;
-  height: 0.6vw;
-  border-radius: 50%;
-  background-color: rgb(255, 0, 0);
+.smcircle {
+  width: 10vw;
+  height: 10vw;
   position: absolute;
-  right: -0.3vw;
   top: 50%;
-  transform: translate(0, -50%);
+  left: 100px;
+  transform: translate(0, 50%);
 }
 
-#panel{
+#panel {
   width: 5%;
   height: 30%;
   position: absolute;
-  top: 50%;                      /*change this later*/
-  right: 0%;
+  right: 1%;
   transform: translate(0, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  top: 250%;
+  right: 10vw;
 }
-.mncircle{
+.mncircle {
   width: 2svw;
   height: 2svw;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-
-
-
 /*--------------media query---------------*/
+@media screen and (min-width: 750px) and (max-width: 1130px) {
+  .second {
+    height: 180% ;
+  }
+}
+
 @media screen and (max-width: 750px) {
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     nav {
@@ -257,7 +262,6 @@ section{
     gap: 1em;
     margin: 1em 0 0 0;
     display: none;
-    /* border: 1px solid yellow; */
   }
 
   .center-nav a {
@@ -265,7 +269,6 @@ section{
     text-align: center;
     font-size: 1.8em;
     padding: 10px;
-    /* width: ; */
   }
   nav i {
     display: block;
@@ -276,10 +279,10 @@ section{
   }
   .intro {
     margin: 15svh 0 5svh 0;
-    font-size: max(4svw, 12px) !important;
+    font-size: max(4svw, 12px);
   }
   #typing-text {
-    font-size: 3svh !important;
+    font-size: 3svh;
   }
   .profile {
     margin-top: -100px;
@@ -289,50 +292,32 @@ section{
     margin-bottom: -100px;
   }
 
-}
-@media screen and (max-width: 550px) {
-  #circle{
-    width: 180svw;
-    height: 180svw;
-    left: -150svw;
-    top: 50%;
+  #circle {
+    left: -60svw;
   }
-  .stripe{
-    width: 80%;
-    height: 65px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(0, -50%);
-    transform-origin: 0% 50%;
-    display: flex;
-    gap: 50px;
-
+  .stripe {
+    gap: 250px;
   }
-
-  .first{
-    width: 50%;
-    height: 100%;
+  .first {
+    margin-left: -150px;
   }
-  .second{
-    width: 30%;
+  .second {
     height: 180%;
-    display: flex;
+    margin: 0 30px;
   }
-  .second img{
-    margin: 0 10px;
+  .second img {
     width: 100px;
+    box-shadow: none;
   }
-  .second h3{
-    font-size: 2svw ;
+  .second h3 {
     min-width: 40svw;
     display: flex;
     align-items: center;
   }
-  .smcircle{
-    width: 0.3vw;
-    height: 0.3vw;
-    right: -0.5vw;
-    top: 50%;
+  .smcircle {
+    width: 1svw;
+    height: 1svw;
+    right: -15svw;
+    top: 90%;
   }
 }

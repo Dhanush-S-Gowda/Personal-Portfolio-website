@@ -1,6 +1,5 @@
 const nav = document.body.querySelector(".center-nav");
 const hamburger = document.querySelector(".menu");
-console.log(hamburger);
 let i = 2;
 hamburger.addEventListener("click", () => {
   if (i % 2 == 0) {
@@ -51,12 +50,12 @@ gsap.to(seconds[active - 1], {
   color: "rgb(253, 0, 68)",
 });
 
-images[active -1].addEventListener("mouseover", () => {
-  images[active -1].style.transform = "scale(2.2)";
+images[active - 1].addEventListener("mouseover", () => {
+  images[active - 1].style.transform = "scale(2.2)";
 });
 
-images[active -1].addEventListener("mouseout", () => {
-  images[active -1].style.transform = "scale(1)";
+images[active - 1].addEventListener("mouseout", () => {
+  images[active - 1].style.transform = "scale(1)";
 });
 
 function coloroff() {
@@ -99,40 +98,41 @@ gsap.to("#circle", {
   duration: 2,
 });
 
-const slider = document.querySelector(".slider");
-const sections = gsap.utils.toArray(".slider section")
+// let screenWidth = window.screen.width || screen.width;
 
-let t1 = gsap.timeline({
-    defaults:{
-        ease: "none"
-    },
-    scrollTrigger: {
-        trigger: slider,
-        pin: true,
-        scrub: 2,
-        end: () => "+=" + slider.offsetWidth
-    }
-})
+// const slider = document.querySelector(".slider");
+// const sections = gsap.utils.toArray(".slider section");
 
-t1.to(slider, {
-    xPercent: -66
-})
+// let t1 = gsap.timeline({
+//   defaults: {
+//     ease: "none",
+//   },
+//   scrollTrigger: {
+//     trigger: slider,
+//     pin: true,
+//     scrub: 2,
+//     end: () => "+=" + slider.offsetWidth,
+//   },
+// });
 
-sections.forEach((stop, index) => {
-    t1.from(stop.querySelector('.content'), {
-        yPercent: 5,
-        opacity: 0,
-        scrollTrigger: {
-            trigger: stop.querySelector('.content'),
-            start: "-30% center",
-            end: "-20% center",
-            containerAnimation: t1,
-            scrub: true,
-            markers: true
-        }
-    })
-})
+// t1.to(slider, {
+//   xPercent: -66,
+// });
 
+// sections.forEach((stop, index) => {
+//   t1.from(stop.querySelector(".content"), {
+//     yPercent: 5,
+//     opacity: 0,
+//     scrollTrigger: {
+//       trigger: stop.querySelector(".content"),
+//       start: "-30% center",
+//       end: "-20% center",
+//       containerAnimation: t1,
+//       scrub: true,
+//       markers: false,
+//     },
+//   });
+// });
 
 
 
