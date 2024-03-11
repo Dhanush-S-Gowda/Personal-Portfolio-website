@@ -204,6 +204,8 @@ section {
   font-size: max(2svw, 18px);
   min-width: 40svw;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.272);
+  display: flex;
+  align-items: center;
 }
 .smcircle {
   width: 10vw;
@@ -216,7 +218,7 @@ section {
 
 #panel {
   width: 5%;
-  height: 30%;
+  height: 35%;
   position: absolute;
   right: 1%;
   transform: translate(0, -50%);
@@ -224,12 +226,12 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  top: 250%;
+  top: 260%;
   right: 10vw;
 }
 .mncircle {
-  width: 2svw;
-  height: 2svw;
+  width: max(2svw, 20px);
+  height: max(2svw, 20px);
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -238,7 +240,7 @@ section {
 /*--------------media query---------------*/
 @media screen and (min-width: 750px) and (max-width: 1130px) {
   .second {
-    height: 180% ;
+    height: 180%;
   }
 }
 
@@ -303,21 +305,37 @@ section {
   }
   .second {
     height: 180%;
-    margin: 0 30px;
+    margin: 0 20px;
   }
   .second img {
-    width: 100px;
+    width: max(100px, 30svw);
     box-shadow: none;
+    margin-right: 10px;
   }
   .second h3 {
     min-width: 40svw;
-    display: flex;
-    align-items: center;
+    font-size: 3svw;
   }
   .smcircle {
     width: 1svw;
     height: 1svw;
     right: -15svw;
     top: 90%;
+  }
+  .str1 {
+    transform: translate(0, -50%) rotate(-60deg) !important;
+  }
+  .str2 {
+    transform: translate(0, -50%) rotate(-30deg) !important;
+  }
+  .str4 {
+    transform: translate(0, -50%) rotate(30deg) !important;
+  }
+  .str5 {
+    transform: translate(0, -50%) rotate(60deg) !important;
+  }
+  #panel{
+    top: 250%;
+    right: 5svw;
   }
 }

@@ -37,6 +37,7 @@ function type() {
 }
 type();
 
+//certificates section
 let active = 3;
 const mncircles = document.querySelectorAll(".mncircle");
 const seconds = document.querySelectorAll(".second h3");
@@ -51,7 +52,7 @@ gsap.to(seconds[active - 1], {
 });
 
 images[active - 1].addEventListener("mouseover", () => {
-  images[active - 1].style.transform = "scale(2.2)";
+  images[active - 1].style.transform = "scale(1.3)";
 });
 
 images[active - 1].addEventListener("mouseout", () => {
@@ -66,14 +67,24 @@ function coloroff() {
     color: "rgb(255, 255, 255)",
   });
 }
+let screenWidth = window.screen.width || screen.width;
 
 mncircles.forEach(function (val, index) {
   val.addEventListener("click", function () {
-    gsap.to("#circle", {
-      rotate: (3 - (index + 1)) * 20,
-      ease: Expo.easeInOut,
-      duration: 1,
-    });
+    if (screenWidth > 750) {
+      gsap.to("#circle", {
+        rotate: (3 - (index + 1)) * 20,
+        ease: Expo.easeInOut,
+        duration: 1,
+      });
+    }
+    if (screenWidth <= 750) {
+      gsap.to("#circle", {
+        rotate: (3 - (index + 1)) * 30,
+        ease: Expo.easeInOut,
+        duration: 1,
+      });
+    }
     coloroff();
     gsap.to(this, {
       backgroundColor: "rgb(253, 0, 68)",
@@ -83,7 +94,7 @@ mncircles.forEach(function (val, index) {
     });
 
     images[index].addEventListener("mouseover", () => {
-      images[index].style.transform = "scale(2.2)";
+      images[index].style.transform = "scale(1.3)";
     });
 
     images[index].addEventListener("mouseout", () => {
@@ -133,8 +144,6 @@ gsap.to("#circle", {
 //     },
 //   });
 // });
-
-
 
 // const lenis = new Lenis()
 
